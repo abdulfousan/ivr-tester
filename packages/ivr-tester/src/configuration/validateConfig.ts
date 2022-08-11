@@ -33,7 +33,8 @@ const schema = Joi.object<Config>({
     }).optional(),
     transcript: Joi.object<Config["recording"]["transcript"]>({
       outputPath: Joi.string().required(),
-      filename: Joi.valid(Joi.string(), Joi.function()).optional(),
+      //filename: Joi.valid(Joi.string(), Joi.function()).optional(),
+      filename: Joi.default.string().optional(),
       includeResponse: Joi.boolean().optional().default(false),
     }).optional(),
   }).optional(),
